@@ -45,23 +45,19 @@
     }
 
     .btn {
-      display: inline-block;
-      margin-top: 15px;
+      display: block;
+      margin: 10px auto;
       padding: 14px 22px;
       background: #25D366;
       color: white;
       text-decoration: none;
       border-radius: 10px;
       font-weight: bold;
-      display: block;
       max-width: 300px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    .phone {
-      font-size: 18px;
-      margin: 10px 0;
+    .btn-call {
+      background: #007BFF;
     }
 
     footer {
@@ -82,19 +78,21 @@
 
   <div class="container">
 
+    <!-- Telefones -->
     <div class="card">
-      <h2>🚖 Central de Atendimento</h2>
+      <h2>📞 Central de Atendimento</h2>
 
-      <div class="phone">📞 2605-6777</div>
-      <div class="phone">📞 2605-2184</div>
-      <div class="phone">📞 2605-4668</div>
-      <div class="phone">📞 2604-0101</div>
+      <a class="btn btn-call" href="tel:552126056777">Ligar 2605-6777</a>
+      <a class="btn btn-call" href="tel:552126052184">Ligar 2605-2184</a>
+      <a class="btn btn-call" href="tel:552126054668">Ligar 2605-4668</a>
+      <a class="btn btn-call" href="tel:552126040101">Ligar 2604-0101</a>
 
     </div>
 
+    <!-- WhatsApp -->
     <div class="card">
-      <h2>📲 WhatsApp</h2>
-      <p>Fale com a TaxiCall direto no WhatsApp:</p>
+      <h2>💬 WhatsApp</h2>
+      <p>Fale com a TaxiCall direto no WhatsApp</p>
 
       <a class="btn" href="https://wa.me/552126052398" target="_blank">
         Chamar no WhatsApp
