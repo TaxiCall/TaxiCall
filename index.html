@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TaxiCall - Transporte Rápido</title>
 
+  <!-- 🔥 FONT AWESOME (ícones profissionais) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       margin: 0;
@@ -28,7 +31,6 @@
       background: url("carro.jpg") center/cover no-repeat;
       transform: scaleX(-1);
       z-index: 0;
-      animation: zoomBg 10s ease-in-out infinite alternate;
     }
 
     header::after {
@@ -48,37 +50,11 @@
       width: 320px;
       max-width: 90%;
       margin-bottom: 10px;
-      animation: fadeDown 1.2s ease-out;
     }
 
     .subtitle {
       font-size: 18px;
       opacity: 0.9;
-      animation: fadeUp 1.5s ease-out;
-    }
-
-    /* 📲 QR CODE RESTAURADO */
-    .qr-box {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: fadeUp 1.8s ease-out;
-    }
-
-    .qr-box img {
-      width: 150px;
-      height: 150px;
-      background: white;
-      padding: 10px;
-      border-radius: 12px;
-    }
-
-    .qr-text {
-      margin-top: 10px;
-      font-size: 14px;
-      color: white;
-      max-width: 250px;
     }
 
     .container {
@@ -87,20 +63,12 @@
 
     .card {
       background: #111;
-      color: #fff;
       margin: 20px auto;
       max-width: 600px;
       padding: 25px;
       border-radius: 12px;
       border: 1px solid #222;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: cardIn 0.8s ease forwards;
     }
-
-    .card:nth-child(1) { animation-delay: 0.2s; }
-    .card:nth-child(2) { animation-delay: 0.4s; }
-    .card:nth-child(3) { animation-delay: 0.6s; }
 
     .btn {
       display: flex;
@@ -124,6 +92,7 @@
     .btn-whatsapp { background: #25D366; }
     .btn-call { background: #007BFF; }
     .btn-app { background: #222; }
+    .btn-insta { background: #E1306C; }
 
     footer {
       margin-top: 40px;
@@ -132,6 +101,7 @@
       color: #aaa;
     }
 
+    /* FLUTUANTES */
     .float-btn {
       position: fixed;
       width: 60px;
@@ -140,7 +110,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
+      font-size: 22px;
       color: white;
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -156,23 +126,8 @@
     .call-float { bottom: 90px; right: 20px; background: #007BFF; }
     .insta-float { bottom: 160px; right: 20px; background: #E1306C; }
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes cardIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes zoomBg {
-      from { transform: scale(1) scaleX(-1); }
-      to { transform: scale(1.1) scaleX(-1); }
+    i {
+      font-size: 22px;
     }
 
   </style>
@@ -181,18 +136,8 @@
 <body>
 
   <header>
-
     <img src="logo.png" class="logo">
     <div class="subtitle">Seu transporte rápido, seguro e fácil</div>
-
-    <!-- 📲 QR CODE DE VOLTA -->
-    <div class="qr-box">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/552126052398">
-      <div class="qr-text">
-        Escaneie o QR Code e peça seu táxi.
-      </div>
-    </div>
-
   </header>
 
   <div class="container">
@@ -200,22 +145,36 @@
     <div class="card">
       <h2>📲 Baixe nosso App</h2>
       <a class="btn btn-app" href="https://play.google.com/store/apps/details?id=net.taxidigital.taxiCall&hl=pt-BR" target="_blank">
-        Baixar App TaxiCall
+        <i class="fa-solid fa-download"></i>
+        Baixar App
       </a>
     </div>
 
     <div class="card">
       <h2>📞 Central de Atendimento</h2>
 
-      <a class="btn btn-call" href="tel:552126056777">Ligar 2605-6777</a>
-      <a class="btn btn-call" href="tel:552126052184">Ligar 2605-2184</a>
-      <a class="btn btn-call" href="tel:552126054668">Ligar 2605-4668</a>
-      <a class="btn btn-call" href="tel:552126040101">Ligar 2604-0101</a>
+      <a class="btn btn-call" href="tel:552126056777">
+        <i class="fa-solid fa-phone"></i> 2605-6777
+      </a>
+
+      <a class="btn btn-call" href="tel:552126052184">
+        <i class="fa-solid fa-phone"></i> 2605-2184
+      </a>
+
+      <a class="btn btn-call" href="tel:552126054668">
+        <i class="fa-solid fa-phone"></i> 2605-4668
+      </a>
+
+      <a class="btn btn-call" href="tel:552126040101">
+        <i class="fa-solid fa-phone"></i> 2604-0101
+      </a>
+
     </div>
 
     <div class="card">
       <h2>💬 WhatsApp</h2>
       <a class="btn btn-whatsapp" href="https://wa.me/552126052398" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
         Chamar no WhatsApp
       </a>
     </div>
@@ -223,9 +182,17 @@
   </div>
 
   <!-- FLUTUANTES -->
-  <a class="float-btn whatsapp-float" href="https://wa.me/552126052398">💬</a>
-  <a class="float-btn call-float" href="tel:552126056777">📞</a>
-  <a class="float-btn insta-float" href="https://www.instagram.com/taxicallcooperativa?igsh=MTFicmlwNGs0bXYxcg==">📸</a>
+  <a class="float-btn whatsapp-float" href="https://wa.me/552126052398">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <a class="float-btn call-float" href="tel:552126056777">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+
+  <a class="float-btn insta-float" href="https://www.instagram.com/taxicallcooperativa?igsh=MTFicmlwNGs0bXYxcg==">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
 
   <footer>
     © 2026 TaxiCall - Todos os direitos reservados <br>
