@@ -10,37 +10,24 @@
       margin: 0;
       font-family: Arial, sans-serif;
       text-align: center;
-      background: #f4f6f8;
-      color: #333;
+      color: #fff;
+
+      /* 🚗 FUNDO COM CARRO */
+      background: url("carro.jpg") center/cover no-repeat fixed;
+      position: relative;
     }
 
-    /* 🔥 HEADER COM IMAGEM */
+    /* escurece fundo pra leitura */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: -1;
+    }
+
     header {
-      position: relative;
-      padding: 60px 20px;
-      color: white;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("header.jpg") center/cover no-repeat;
-      z-index: 0;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55); /* escurece imagem */
-      z-index: 1;
-    }
-
-    header * {
-      position: relative;
-      z-index: 2;
+      padding: 50px 20px;
     }
 
     .logo {
@@ -66,12 +53,13 @@
     }
 
     .card {
-      background: white;
+      background: rgba(255,255,255,0.95);
+      color: #333;
       margin: 20px auto;
       max-width: 600px;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .btn {
@@ -101,7 +89,7 @@
       margin-top: 40px;
       padding: 20px;
       font-size: 13px;
-      color: #777;
+      color: #ddd;
     }
 
     /* BOTÕES FLUTUANTES */
