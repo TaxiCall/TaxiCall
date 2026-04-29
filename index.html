@@ -14,12 +14,11 @@
       color: #fff;
     }
 
-    /* 🔥 HEADER */
     header {
       position: relative;
       padding: 60px 20px;
       overflow: hidden;
-      min-height: 420px;
+      min-height: 450px;
     }
 
     header::before {
@@ -45,11 +44,10 @@
       z-index: 2;
     }
 
-    /* ✨ LOGO ANIMADA */
     .logo {
       width: 320px;
       max-width: 90%;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       animation: fadeDown 1.2s ease-out;
     }
 
@@ -59,12 +57,34 @@
       animation: fadeUp 1.5s ease-out;
     }
 
-    /* CONTAINER */
+    /* 📲 QR CODE RESTAURADO */
+    .qr-box {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp 1.8s ease-out;
+    }
+
+    .qr-box img {
+      width: 150px;
+      height: 150px;
+      background: white;
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    .qr-text {
+      margin-top: 10px;
+      font-size: 14px;
+      color: white;
+      max-width: 250px;
+    }
+
     .container {
       padding: 30px 20px;
     }
 
-    /* 🧊 CARDS COM ANIMAÇÃO */
     .card {
       background: #111;
       color: #fff;
@@ -73,7 +93,6 @@
       padding: 25px;
       border-radius: 12px;
       border: 1px solid #222;
-
       opacity: 0;
       transform: translateY(30px);
       animation: cardIn 0.8s ease forwards;
@@ -83,7 +102,6 @@
     .card:nth-child(2) { animation-delay: 0.4s; }
     .card:nth-child(3) { animation-delay: 0.6s; }
 
-    /* 🔘 BOTÕES */
     .btn {
       display: flex;
       align-items: center;
@@ -96,20 +114,17 @@
       border-radius: 10px;
       font-weight: bold;
       max-width: 300px;
-
-      transition: transform 0.2s ease, filter 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .btn:hover {
       transform: scale(1.05);
-      filter: brightness(1.2);
     }
 
     .btn-whatsapp { background: #25D366; }
     .btn-call { background: #007BFF; }
     .btn-app { background: #222; }
 
-    /* FOOTER */
     footer {
       margin-top: 40px;
       padding: 25px;
@@ -117,7 +132,6 @@
       color: #aaa;
     }
 
-    /* FLUTUANTES */
     .float-btn {
       position: fixed;
       width: 60px;
@@ -142,7 +156,6 @@
     .call-float { bottom: 90px; right: 20px; background: #007BFF; }
     .insta-float { bottom: 160px; right: 20px; background: #E1306C; }
 
-    /* 🎬 ANIMAÇÕES */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -168,8 +181,18 @@
 <body>
 
   <header>
+
     <img src="logo.png" class="logo">
     <div class="subtitle">Seu transporte rápido, seguro e fácil</div>
+
+    <!-- 📲 QR CODE DE VOLTA -->
+    <div class="qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/552126052398">
+      <div class="qr-text">
+        Escaneie o QR Code e peça seu táxi.
+      </div>
+    </div>
+
   </header>
 
   <div class="container">
