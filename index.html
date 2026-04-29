@@ -10,8 +10,8 @@
       margin: 0;
       font-family: Arial, sans-serif;
       text-align: center;
-      background: #f4f6f8;
-      color: #333;
+      background: #000;
+      color: #fff;
     }
 
     header {
@@ -35,7 +35,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.65);
+      background: rgba(0,0,0,0.75);
       z-index: 1;
     }
 
@@ -81,7 +81,7 @@
     .qr-text {
       margin-top: 10px;
       font-size: 14px;
-      color: white;
+      color: #fff;
       max-width: 250px;
     }
 
@@ -89,14 +89,16 @@
       padding: 30px 20px;
     }
 
+    /* 🔥 CARDS AGORA PRETOS */
     .card {
-      background: rgba(255,255,255,0.95);
-      color: #333;
+      background: #111;
+      color: #fff;
       margin: 20px auto;
       max-width: 600px;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+      border: 1px solid #222;
     }
 
     .btn {
@@ -115,14 +117,14 @@
 
     .btn-whatsapp { background: #25D366; }
     .btn-call { background: #007BFF; }
-    .btn-app { background: #111; }
+    .btn-app { background: #222; }
     .btn-insta { background: #E1306C; }
 
     footer {
       margin-top: 40px;
       padding: 25px;
       font-size: 13px;
-      color: #777;
+      color: #aaa;
       text-align: center;
     }
 
@@ -170,14 +172,12 @@
     <h1>TaxiCall</h1>
     <div class="subtitle">Seu transporte rápido, seguro e fácil</div>
 
-    <!-- 📲 QR CODE RESTAURADO -->
     <div class="qr-box">
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/552126052398">
       <div class="qr-text">
         Escaneie o QR Code e peça seu táxi.
       </div>
     </div>
-
   </header>
 
   <div class="container">
