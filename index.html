@@ -60,7 +60,11 @@
     }
 
     .btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
       margin: 10px auto;
       padding: 14px 22px;
       color: white;
@@ -121,6 +125,13 @@
       background: #007BFF;
     }
 
+    /* ícone instagram */
+    .icon {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+
   </style>
 </head>
 
@@ -149,6 +160,12 @@
       <p>Siga a TaxiCall e acompanhe novidades e promoções.</p>
 
       <a class="btn btn-insta" href="https://www.instagram.com/taxicallcooperativa?igsh=MTFicmlwNGs0bXYxcg==" target="_blank">
+
+        <!-- 🔥 ÍCONE OFICIAL INSTAGRAM (SVG) -->
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 9.5 12 2.5 2.5 0 0 1 12 9.5zM17.5 6a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/>
+        </svg>
+
         Seguir no Instagram
       </a>
     </div>
