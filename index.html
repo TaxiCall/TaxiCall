@@ -12,14 +12,12 @@
       text-align: center;
       color: white;
 
-      /* 🔥 FUNDO (corrigido) */
       background-image: url("./logo.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* escurece fundo */
     body::before {
       content: "";
       position: fixed;
@@ -79,6 +77,37 @@
       font-size: 13px;
       color: #ddd;
     }
+
+    /* 🔥 BOTÕES FLUTUANTES */
+    .float-btn {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
+
+    /* WhatsApp */
+    .whatsapp-float {
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+    }
+
+    /* Ligar */
+    .call-float {
+      bottom: 90px;
+      right: 20px;
+      background: #007BFF;
+    }
+
   </style>
 </head>
 
@@ -110,6 +139,15 @@
     </div>
 
   </div>
+
+  <!-- 🔥 BOTÕES FLUTUANTES -->
+  <a class="float-btn whatsapp-float" href="https://wa.me/552126052398" target="_blank">
+    💬
+  </a>
+
+  <a class="float-btn call-float" href="tel:552126056777">
+    📞
+  </a>
 
   <footer>
     © 2026 TaxiCall - Todos os direitos reservados
