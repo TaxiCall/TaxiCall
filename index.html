@@ -10,14 +10,11 @@
       margin: 0;
       font-family: Arial, sans-serif;
       text-align: center;
-      color: #fff;
-
-      /* 🚗 FUNDO COM CARRO */
       background: url("carro.jpg") center/cover no-repeat fixed;
+      color: #fff;
       position: relative;
     }
 
-    /* escurece fundo pra leitura */
     body::before {
       content: "";
       position: fixed;
@@ -85,6 +82,10 @@
       background: #111;
     }
 
+    .btn-insta {
+      background: #E1306C;
+    }
+
     footer {
       margin-top: 40px;
       padding: 20px;
@@ -133,6 +134,7 @@
 
   <div class="container">
 
+    <!-- APP -->
     <div class="card">
       <h2>📲 Baixe nosso App</h2>
 
@@ -141,6 +143,17 @@
       </a>
     </div>
 
+    <!-- INSTAGRAM -->
+    <div class="card">
+      <h2>📸 Instagram</h2>
+      <p>Siga a TaxiCall e acompanhe novidades e promoções.</p>
+
+      <a class="btn btn-insta" href="https://www.instagram.com/taxicallcooperativa?igsh=MTFicmlwNGs0bXYxcg==" target="_blank">
+        Seguir no Instagram
+      </a>
+    </div>
+
+    <!-- TELEFONES -->
     <div class="card">
       <h2>📞 Central de Atendimento</h2>
 
@@ -151,6 +164,7 @@
 
     </div>
 
+    <!-- WHATSAPP -->
     <div class="card">
       <h2>💬 WhatsApp</h2>
 
