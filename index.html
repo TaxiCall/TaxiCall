@@ -16,7 +16,7 @@
 
     header {
       position: relative;
-      padding: 50px 20px;
+      padding: 60px 20px;
       color: white;
       overflow: hidden;
       min-height: 420px;
@@ -44,16 +44,12 @@
       z-index: 2;
     }
 
+    /* 🔥 LOGO MAIOR E MAIS DESTACADA */
     .logo {
-      width: 200px;
-      max-width: 80%;
+      width: 320px;
+      max-width: 90%;
       height: auto;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 42px;
+      margin-bottom: 15px;
     }
 
     .subtitle {
@@ -62,34 +58,10 @@
       opacity: 0.9;
     }
 
-    /* 📲 QR CODE */
-    .qr-box {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .qr-box img {
-      width: 150px;
-      height: 150px;
-      background: white;
-      padding: 10px;
-      border-radius: 12px;
-    }
-
-    .qr-text {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #fff;
-      max-width: 250px;
-    }
-
     .container {
       padding: 30px 20px;
     }
 
-    /* 🔥 CARDS AGORA PRETOS */
     .card {
       background: #111;
       color: #fff;
@@ -168,16 +140,12 @@
 <body>
 
   <header>
-    <img src="logo.png" class="logo">
-    <h1>TaxiCall</h1>
+
+    <!-- 🚖 LOGO ÚNICA (SEM TEXTO EMBAIXO) -->
+    <img src="logo.png" alt="TaxiCall Logo" class="logo">
+
     <div class="subtitle">Seu transporte rápido, seguro e fácil</div>
 
-    <div class="qr-box">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/552126052398">
-      <div class="qr-text">
-        Escaneie o QR Code e peça seu táxi.
-      </div>
-    </div>
   </header>
 
   <div class="container">
