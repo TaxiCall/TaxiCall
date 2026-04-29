@@ -12,22 +12,19 @@
       text-align: center;
       color: white;
 
-      /* 🔥 LOGO COMO FUNDO */
-      background-image: url("logo.png");
+      /* 🔥 FUNDO (corrigido) */
+      background-image: url("./logo.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* escurece fundo pra texto aparecer */
+    /* escurece fundo */
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.55);
+      inset: 0;
+      background: rgba(0,0,0,0.6);
       z-index: -1;
     }
 
@@ -94,7 +91,6 @@
 
   <div class="container">
 
-    <!-- Telefones -->
     <div class="card">
       <h2>📞 Central de Atendimento</h2>
 
@@ -105,10 +101,8 @@
 
     </div>
 
-    <!-- WhatsApp -->
     <div class="card">
       <h2>💬 WhatsApp</h2>
-      <p>Fale com a TaxiCall direto no WhatsApp</p>
 
       <a class="btn" href="https://wa.me/552126052398" target="_blank">
         Chamar no WhatsApp
