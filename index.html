@@ -5,199 +5,266 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TaxiCall - Transporte Rápido</title>
 
-  <!-- 🔥 FONT AWESOME (ícones profissionais) -->
+  <!-- Ícones profissionais -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #000;
-      color: #fff;
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      text-align:center;
+      background:#000;
+      color:#fff;
     }
 
-    header {
-      position: relative;
-      padding: 60px 20px;
-      overflow: hidden;
-      min-height: 450px;
+    header{
+      position:relative;
+      padding:60px 20px;
+      overflow:hidden;
+      min-height:520px;
     }
 
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("carro.jpg") center/cover no-repeat;
-      transform: scaleX(-1);
-      z-index: 0;
+    header::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url("carro.jpg") center/cover no-repeat;
+      transform:scaleX(-1);
+      z-index:0;
+      animation:zoomBg 10s ease-in-out infinite alternate;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.75);
-      z-index: 1;
+    header::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.72);
+      z-index:1;
     }
 
-    header * {
-      position: relative;
-      z-index: 2;
+    header *{
+      position:relative;
+      z-index:2;
     }
 
-    .logo {
-      width: 320px;
-      max-width: 90%;
-      margin-bottom: 10px;
+    .logo{
+      width:330px;
+      max-width:92%;
+      margin-bottom:10px;
+      animation:fadeDown 1.2s ease-out;
     }
 
-    .subtitle {
-      font-size: 18px;
-      opacity: 0.9;
+    .subtitle{
+      font-size:18px;
+      opacity:.95;
+      animation:fadeUp 1.4s ease-out;
     }
 
-    .container {
-      padding: 30px 20px;
+    /* QR */
+    .qr-box{
+      margin-top:22px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      animation:fadeUp 1.8s ease-out;
     }
 
-    .card {
-      background: #111;
-      margin: 20px auto;
-      max-width: 600px;
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #222;
+    .qr-box img{
+      width:150px;
+      height:150px;
+      background:white;
+      padding:10px;
+      border-radius:14px;
+      box-shadow:0 0 25px rgba(255,255,255,.15);
     }
 
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px auto;
-      padding: 14px 22px;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      max-width: 300px;
-      transition: transform 0.2s ease;
+    .qr-text{
+      margin-top:12px;
+      font-size:14px;
+      color:#fff;
+      max-width:260px;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
+    .container{
+      padding:30px 20px;
     }
 
-    .btn-whatsapp { background: #25D366; }
-    .btn-call { background: #007BFF; }
-    .btn-app { background: #222; }
-    .btn-insta { background: #E1306C; }
-
-    footer {
-      margin-top: 40px;
-      padding: 25px;
-      font-size: 13px;
-      color: #aaa;
+    .card{
+      background:#111;
+      margin:20px auto;
+      max-width:600px;
+      padding:25px;
+      border-radius:16px;
+      border:1px solid #222;
+      opacity:0;
+      transform:translateY(30px);
+      animation:cardIn .8s ease forwards;
+      box-shadow:0 8px 25px rgba(255,255,255,.03);
     }
 
-    /* FLUTUANTES */
-    .float-btn {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      color: white;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 999;
-      transition: transform 0.2s ease;
+    .card:nth-child(1){animation-delay:.2s;}
+    .card:nth-child(2){animation-delay:.4s;}
+    .card:nth-child(3){animation-delay:.6s;}
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin:10px auto;
+      padding:14px 22px;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:bold;
+      max-width:320px;
+      transition:.2s;
     }
 
-    .float-btn:hover {
-      transform: scale(1.15);
+    .btn:hover{
+      transform:scale(1.04);
     }
 
-    .whatsapp-float { bottom: 20px; right: 20px; background: #25D366; }
-    .call-float { bottom: 90px; right: 20px; background: #007BFF; }
-    .insta-float { bottom: 160px; right: 20px; background: #E1306C; }
+    .btn-whatsapp{background:#25D366;}
+    .btn-call{background:#007BFF;}
 
-    i {
-      font-size: 22px;
+    .play-badge{
+      width:220px;
+      margin-top:10px;
+      transition:.2s;
     }
 
+    .play-badge:hover{
+      transform:scale(1.05);
+    }
+
+    footer{
+      margin-top:40px;
+      padding:25px;
+      font-size:13px;
+      color:#aaa;
+    }
+
+    /* flutuantes */
+    .float-btn{
+      position:fixed;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      color:white;
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,.35);
+      z-index:999;
+      transition:.2s;
+    }
+
+    .float-btn:hover{
+      transform:scale(1.15);
+    }
+
+    .whatsapp-float{bottom:20px;right:20px;background:#25D366;}
+    .call-float{bottom:90px;right:20px;background:#007BFF;}
+    .insta-float{bottom:160px;right:20px;background:#E1306C;}
+
+    @keyframes fadeDown{
+      from{opacity:0;transform:translateY(-20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes cardIn{
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes zoomBg{
+      from{transform:scale(1) scaleX(-1);}
+      to{transform:scale(1.08) scaleX(-1);}
+    }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="logo.png" class="logo">
-    <div class="subtitle">Seu transporte rápido, seguro e fácil</div>
-  </header>
+<header>
+  <img src="logo.png" class="logo" alt="TaxiCall">
+  <div class="subtitle">Seu transporte rápido, seguro e fácil</div>
 
-  <div class="container">
-
-    <div class="card">
-      <h2>📲 Baixe nosso App</h2>
-      <a class="btn btn-app" href="https://play.google.com/store/apps/details?id=net.taxidigital.taxiCall&hl=pt-BR" target="_blank">
-        <i class="fa-solid fa-download"></i>
-        Baixar App
-      </a>
+  <div class="qr-box">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/552126052398" alt="QR Code WhatsApp">
+    <div class="qr-text">
+      Escaneie o QR Code e peça seu táxi.
     </div>
+  </div>
+</header>
 
-    <div class="card">
-      <h2>📞 Central de Atendimento</h2>
+<div class="container">
 
-      <a class="btn btn-call" href="tel:552126056777">
-        <i class="fa-solid fa-phone"></i> 2605-6777
-      </a>
+  <div class="card">
+    <h2>Baixe nosso App</h2>
 
-      <a class="btn btn-call" href="tel:552126052184">
-        <i class="fa-solid fa-phone"></i> 2605-2184
-      </a>
-
-      <a class="btn btn-call" href="tel:552126054668">
-        <i class="fa-solid fa-phone"></i> 2605-4668
-      </a>
-
-      <a class="btn btn-call" href="tel:552126040101">
-        <i class="fa-solid fa-phone"></i> 2604-0101
-      </a>
-
-    </div>
-
-    <div class="card">
-      <h2>💬 WhatsApp</h2>
-      <a class="btn btn-whatsapp" href="https://wa.me/552126052398" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-        Chamar no WhatsApp
-      </a>
-    </div>
-
+    <a href="https://play.google.com/store/apps/details?id=net.taxidigital.taxiCall&hl=pt-BR" target="_blank">
+      <img
+        class="play-badge"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+        alt="Baixar na Google Play">
+    </a>
   </div>
 
-  <!-- FLUTUANTES -->
-  <a class="float-btn whatsapp-float" href="https://wa.me/552126052398">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  <div class="card">
+    <h2>Central de Atendimento</h2>
 
-  <a class="float-btn call-float" href="tel:552126056777">
-    <i class="fa-solid fa-phone"></i>
-  </a>
+    <a class="btn btn-call" href="tel:552126056777">
+      <i class="fa-solid fa-phone"></i>2605-6777
+    </a>
 
-  <a class="float-btn insta-float" href="https://www.instagram.com/taxicallcooperativa?igsh=MTFicmlwNGs0bXYxcg==">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
+    <a class="btn btn-call" href="tel:552126052184">
+      <i class="fa-solid fa-phone"></i>2605-2184
+    </a>
 
-  <footer>
-    © 2026 TaxiCall - Todos os direitos reservados <br>
-    CNPJ: 02.542.813/0001-39
-  </footer>
+    <a class="btn btn-call" href="tel:552126054668">
+      <i class="fa-solid fa-phone"></i>2605-4668
+    </a>
+
+    <a class="btn btn-call" href="tel:552126040101">
+      <i class="fa-solid fa-phone"></i>2604-0101
+    </a>
+  </div>
+
+  <div class="card">
+    <h2>WhatsApp</h2>
+
+    <a class="btn btn-whatsapp" href="https://wa.me/552126052398" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+      Chamar no WhatsApp
+    </a>
+  </div>
+
+</div>
+
+<a class="float-btn whatsapp-float" href="https://wa.me/552126052398" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a class="float-btn call-float" href="tel:552126056777">
+  <i class="fa-solid fa-phone"></i>
+</a>
+
+<a class="float-btn insta-float" href="https://www.instagram.com/taxicallcooperativa?igsh=MTFicmlwNGs0bXYxcg==" target="_blank">
+  <i class="fa-brands fa-instagram"></i>
+</a>
+
+<footer>
+  © 2026 TaxiCall - Todos os direitos reservados<br>
+  CNPJ: 02.542.813/0001-39
+</footer>
 
 </body>
 </html>
