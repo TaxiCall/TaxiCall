@@ -14,13 +14,35 @@
       color: #333;
     }
 
+    /* 🔥 HEADER COM IMAGEM */
     header {
-      background: #0047AB;
+      position: relative;
+      padding: 60px 20px;
       color: white;
-      padding: 50px 20px;
+      overflow: hidden;
     }
 
-    /* 🔥 LOGO MAIOR */
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("header.jpg") center/cover no-repeat;
+      z-index: 0;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55); /* escurece imagem */
+      z-index: 1;
+    }
+
+    header * {
+      position: relative;
+      z-index: 2;
+    }
+
     .logo {
       width: 220px;
       max-width: 80%;
@@ -123,7 +145,6 @@
 
   <div class="container">
 
-    <!-- APP -->
     <div class="card">
       <h2>📲 Baixe nosso App</h2>
 
@@ -132,7 +153,6 @@
       </a>
     </div>
 
-    <!-- TELEFONES -->
     <div class="card">
       <h2>📞 Central de Atendimento</h2>
 
@@ -143,7 +163,6 @@
 
     </div>
 
-    <!-- WHATSAPP -->
     <div class="card">
       <h2>💬 WhatsApp</h2>
 
